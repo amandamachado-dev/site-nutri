@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myrella Machado - Nutrição Personalizada</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cor-primaria: #94B49F;
+            --cor-secundaria: #F4F9F4;
+            --cor-texto: #2C3333;
+            --fonte-principal: 'Arial', sans-serif;
+            --transicao: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /*Ajustar espaçamento assimetrico*/
+        
+
+        body {
+            width: 100%;
+            font-family: var(--fonte-principal);
+            line-height: 1.6;
+            color: var(--cor-texto);
+            background-color: var(--cor-secundaria);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+
+        /* Header */
+        header {
+            
+            position: fixed;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 24px;
+            color: var(--cor-primaria);
+            font-weight: bold;
+        }
+
+        nav a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: var(--cor-texto);
+            transition: var(--transicao);
+        }
+
+        nav a:hover {
+            color: var(--cor-primaria);
+        }
+
+        /* Animações */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+/* Hero Section */
+        
+
+.hero {
+    min-height: 100vh;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    background-color: #f8f9f6;
+    position: relative;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 600px;
+    animation: fadeIn 1s ease-out;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    color: #2C3333;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    
+}
+
+.hero-text h1 span {
+    
+   
+    color: #71977d;
+    font-weight: inherit; /* Mantém o mesmo peso da fonte do h1 */
+}
+
+.hero p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 2.5rem;
+    max-width: 90%;
+    text-align: justify;
+}
+
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    animation: fadeIn 1s ease-out 0.3s backwards;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 40%;
+    position: relative;
+    z-index: 2; /* Garante que a imagem fique acima dos círculos */
+}
+
+.hero-circles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Garante que fique atrás da imagem */
+}
+
+.circle {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(33, 134, 114, 0.5); /* Verde suave */
+    border-radius: 50%;
+    filter: blur(50px);
+    animation: pulse 3s infinite ease-in-out;
+}
+
+.circle:nth-child(1) {
+    top: -20px;
+    left: -40px;
+}
+
+.circle:nth-child(2) {
+    bottom: -20px;
+    right: -40px;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+    
+
+/* Botão estilo exato da imagem */
+.btn-primary {
+    background-color: #94B49F;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-primary:hover {
+    background-color: #7a9984;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .header-container {
+        margin-top: -28%;
+    }
+    .hero {
+        margin-top: 30%;
+        padding: 0 5%;
+        gap: 20%;
+    }
+    
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero p {
+        margin: 0 auto 2rem;
+    }
+
+    .hero-image {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        margin-top: -28%;
+        
+    }
+    .hero h1 {
+        font-size: 2.3rem;
+        
+    }
+}
+
+        /* Animação das seções */
+        section:not(.hero) {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        section:not(.hero).visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--cor-texto);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: var(--cor-texto);
+            opacity: 0.8;
+        }
+
+        .hero-image {
+            flex: 1;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 40%;
+        }
+
+        /* Seção Quem Sou */
+        .quem-sou {
+            background-color: white;
+            padding: 100px 0;
+        }
+
+
+        .quem-sou h2 {
+            text-align: center;
+            margin-bottom: 4rem;
+            font-size: 2.5rem;
+            color: var(--cor-texto);
+        }
+        
+        
+        .servicos h2,
+        .depoimentos h2,
+        .contato h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--cor-texto);
+        }
+
+        .quem-sou-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            padding: 0 20px;
+        }
+
+        .quem-sou-content img {
+            max-width: 400px;
+            border-radius: 10px;
+            background-color: #f0f0f0;
+        }
+
+        .texto-quem-sou p {
+            margin-bottom: 15px;
+        }
+
+        /* Serviços */
+        #servicos {
+            padding: 6rem 2rem;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            font-size: 2.5rem;
+            color: var(--cor-texto);
+        }
+
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .servico-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: var(--transicao);
+        }
+
+        .servico-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Depoimentos */
+        #depoimentos {
+            padding: 6rem 2rem;
+            background-color: var(--cor-secundaria);
+        }
+
+        .depoimentos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .depoimento-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Contato */
+        #contato {
+            padding: 6rem 2rem;
+            background-color: white;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .btn-primary {
+            background-color: var(--cor-primaria);
+            color: white;
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transicao);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--cor-texto);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header-container {
+        margin-top: -28%;
+    }
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+                
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            
+
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">MM</div>
+            <nav>
+                <a href="#quem-sou">Quem Sou</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#depoimentos">Depoimentos</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1><span>Nutrição Inteligente</span><br>para uma Vida Plena<br>e Saudável</h1>
+                <p>A chave para uma vida plena e longeva começa pela alimentação. Com experiência sólida com atendimentos de diversos peris, ofereço um atendimento personalizado e estratégico, voltado para suas necessidades reais.</p>
+                <a href="https://wa.me/5511951513347" target="_blank" class="btn-primary" class="btn-primary" > 
+                    Agende sua Consulta ➔
+                </a>
+            </div>
+            
+            <div class="hero-image">
+                <div class="hero-image">
+                    <div class="hero-circles">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                <img src="./assets/myrella-removebg-preview.png" alt="Myrella Machado - Nutricionista">
+            </div>
+        </div>
+    </section>
+
+    <section id="quem-sou" class="quem-sou">
+        <h2>Quem Sou</h2>
+        <div class="quem-sou-content">
+            
+            <div class="texto-quem-sou">
+                <p>Sou Myrella Machado, nutricionista apaixonada por transformar vidas através da alimentação. Com 5 anos de formação, atendo pacientes de diferentes perfis, sempre identificando e suprindo suas necessidades de forma precisa e individualizada. Trabalho com pesquisa clínica e liderança de equipes, unindo ciência e prática para oferecer um atendimento baseado em evidências.</p>
+                <p>Atendo todos os públicos com excelência, criando planos nutricionais alinhados ao seu estilo de vida e objetivos. Acredito que uma alimentação equilibrada é o pilar para uma vida plena e saudável, e meu compromisso é guiá-lo nessa jornada com conhecimento, empatia e resultados reais.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos">
+        <h2 class="section-title">Meus Serviços</h2>
+        <div class="servicos-grid">
+            <div class="servico-card">
+                <h3>Emagrecimento</h3>
+                <p>Plano nutricional personalizado para perda de peso de forma saudável e sustentável.</p>
+            </div>
+            <div class="servico-card">
+                <h3>Hipertrofia</h3>
+                <p>Estratégias nutricionais para ganho de massa muscular e definição corporal.</p>
+            </div>
+            <div class="servico-card">
+                <h3>Nutrição Juvenil</h3>
+                <p>Suporte nutricional para crianças e adolescentes.</p>
+            </div>
+            <div class="servico-card">
+                <h3>Reeducação Alimentar</h3>
+                <p>Desenvolvimento de novos hábitos alimentares para uma vida mais saudável.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos">
+        <h2 class="section-title">Depoimentos</h2>
+        <div class="depoimentos-container">
+            <div class="depoimento-card">
+                <p>Consegui emagrecer 10kg de forma saudável e sustentável com a Myrella. Sua abordagem é incrível!</p>
+                <span>- Maria Silva</span>
+            </div>
+            <div class="depoimento-card">
+                <p>Como atleta, encontrei na Myrella a nutricionista que me ajudou a melhorar meu desempenho.</p>
+                <span>- João Santos</span>
+            </div>
+            <div class="depoimento-card">
+                <p>Finalmente encontrei uma nutricionista que me entende. Plano totalmente personalizado!</p>
+                <span>- Ana Oliveira</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <h2 class="section-title">Entre em Contato</h2>
+        <div class="social-links">
+            <a href="https://wa.me/5511951513347" target="_blank">
+                <img src="./assets/icons8-whatsapp-50.png" alt="WhatsApp">
+            </a>
+            <a href="https://instagram.com/amanda.amachado" target="_blank">
+                <img src="./assets/icons8-instagram-preto.png" alt="Instagram">
+            </a>
+            <a href="https://gmail.com/" target="_blank">
+                <img src="./assets/icons8-gmail-logo-50.png" alt="Gmail">
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Myrella Machado Nutrição. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Intersection Observer para animações das seções
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observa todas as seções exceto hero
+        document.querySelectorAll('section:not(.hero)').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Smooth scroll com animação
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                const offset = 80; // Ajuste para o header fixo
+                const targetPosition = targetSection.offsetTop - offset;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Header scroll effect com transição suave
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.boxShadow = 'none';
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
